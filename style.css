@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    width: 70px;
+    height: 30px;
+}
+
+#container {
+    width: 100%;
+}
+
+#spbag,
+#login,
+#join {
+    float: right;
+    overflow: hidden;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    gap: 220px;
+    font-size: 25px;
+    font-weight: 550;
+}
+
+/* slide */
+
+input{
+    display: none;
+}
+
+#visual{
+    background-size: contain;
+}
+
+#visual {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    overflow: hidden;
+    margin: auto;
+}
+
+#visual:hover .slides {
+    animation-play-state: paused;
+}
+
+.slides {
+    position: absolute;
+    width: 400%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    display: none;
+    animation-name: intro;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+
+.slide {
+    width: 25%;
+    height: 600px;
+
+}
+
+#slide3:checked ~ .buttons > .button:nth-child(3),
+#slide2:checked ~ .buttons > .button:nth-child(2),
+#slide1:checked ~ .buttons > .button:nth-child(1),
+#slide3:checked ~ #visual > .slides:nth-child(3),
+#slide2:checked ~ #visual > .slides:nth-child(2),
+#slide1:checked ~ #visual > .slides:nth-child(1) {
+    display: flex;
+}
+
+@keyframes  intro {
+    0% {
+        left: 0;
+    } 30% {
+        left: 0%;
+    } 33% {
+        left: -100%;
+    } 63% {
+        left: -100%;
+    } 66% {
+        left: -200%;
+    } 96% {
+        left: -200%;
+    } 100% {
+        left: -300%;
+    }
+}
+
+.buttons {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.button {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 100px;
+    display: none;
+}
+
+.button label {
+    cursor: pointer;
+}
