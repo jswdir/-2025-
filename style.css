@@ -37,18 +37,18 @@ button {
 
 /* slide */
 
-input{
+input {
     display: none;
 }
 
-#visual{
+#visual {
     background-size: contain;
 }
 
 #visual {
     position: relative;
-    width: 80%;
-    height: 600px;
+    width: 100%;
+    height: 700px;
     overflow: hidden;
     margin: auto;
 }
@@ -72,33 +72,64 @@ input{
 
 .slide {
     width: 25%;
-    height: 600px;
-
+    height: 700px;
+    background-size: cover;
 }
 
-#slide3:checked ~ .buttons > .button:nth-child(3),
-#slide2:checked ~ .buttons > .button:nth-child(2),
-#slide1:checked ~ .buttons > .button:nth-child(1),
-#slide3:checked ~ #visual > .slides:nth-child(3),
-#slide2:checked ~ #visual > .slides:nth-child(2),
-#slide1:checked ~ #visual > .slides:nth-child(1) {
+.slide>h2 {
+    color: white;
+    margin-left: 400px;
+    margin-top: 250px;
+    font-size: 35px;
+}
+
+.one {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/01.PNG);
+}
+
+.two {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/26.JPG);
+}
+
+.three {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/08.jpg);
+}
+
+#slide3:checked~.buttons>.button:nth-child(3),
+#slide2:checked~.buttons>.button:nth-child(2),
+#slide1:checked~.buttons>.button:nth-child(1),
+#slide3:checked~#visual>.slides:nth-child(3),
+#slide2:checked~#visual>.slides:nth-child(2),
+#slide1:checked~#visual>.slides:nth-child(1) {
     display: flex;
 }
 
-@keyframes  intro {
+@keyframes intro {
     0% {
         left: 0;
-    } 30% {
+    }
+
+    30% {
         left: 0%;
-    } 33% {
+    }
+
+    33% {
         left: -100%;
-    } 63% {
+    }
+
+    63% {
         left: -100%;
-    } 66% {
+    }
+
+    66% {
         left: -200%;
-    } 96% {
+    }
+
+    96% {
         left: -200%;
-    } 100% {
+    }
+
+    100% {
         left: -300%;
     }
 }
@@ -106,7 +137,6 @@ input{
 .buttons {
     width: 80%;
     margin: auto;
-    position: relative;
 }
 
 .button {
@@ -115,11 +145,47 @@ input{
     top: 0px;
     left: 0px;
     display: flex;
-    justify-content: space-between;
-    font-size: 100px;
+    justify-content: center;
+    gap: 85%;
+    font-size: 140px;
     display: none;
+    color: white;
+    margin-top: 20%;
 }
 
 .button label {
     cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+}
+
+/* content */
+
+.section1{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    margin-top: 50px;
+    gap: 100px;
+    margin-left: 20%;
+}
+
+.content > button{
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 550;
+    border-radius: 5%;
+}
+
+.cards{
+    margin-top: 50px;
+    display: flex;
+    gap: 150px;
+    margin-left: 11%;
 }
